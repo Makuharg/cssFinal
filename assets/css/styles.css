@@ -149,6 +149,15 @@ header p {
     scroll-snap-align: center;
 }
 
+/* css de titulo y filtros */
+
+.filtros {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 30vh;
+}
+
 .filtros h2 {
     margin-top: 15px;
     text-align: center;
@@ -170,7 +179,7 @@ header p {
     border: 1px solid grey;
 }
 
-/* css del mina */
+/* css del main */
 
 main {
     grid-area: main;
