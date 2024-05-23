@@ -133,8 +133,7 @@ header p {
 
 .carroussel {
     grid-area: sectionA;
-    height: 55vh;
-
+    height: 65vh;
     /* creando el carroussel */
     display: flex;
     overflow-x: scroll;
@@ -155,7 +154,8 @@ header p {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 30vh;
+    height: 20vh;
+    grid-area: sectionB;
 }
 
 .filtros h2 {
@@ -165,7 +165,7 @@ header p {
 }
 
 .filtros div {
-    grid-area: sectionB;
+    
     display: flex;
     margin-top: 20px;
     height: 5vh;
@@ -187,8 +187,7 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
-    overflow-y: auto;
-    height: 50vh;
+
 }
 
 .card img {
@@ -259,8 +258,6 @@ footer {
     border-top: 1px solid rgb(237, 71, 105);
 }
 
-
-
 .redes {
     margin: 20px;
     padding-bottom: 20px;
@@ -275,5 +272,111 @@ footer {
 .redes i:hover {
     opacity: 0.7;
     transition: 1.5s;
+}
+
+/* Modificando css para desktop */
+
+@media (width >= 576px) {
+    body {
+        grid-template-areas: 
+            "nav header"
+            "nav sectionA"
+            "nav sectionB"
+            "nav main"
+            "footer footer"
+        ;
+
+        width: 100vw;
+        height: auto;
+    }
+
+    /*
+nav ul {
+    float: right;
+    margin-right: 20px;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: crimson;
+    top: 100px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+
+} */
+
+    nav {
+        width: 15vw;
+
+    }
+
+    nav ul {
+        float: left;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        left: 0;
+        margin: 0;
+        height: 100%;
+        background-color: #fff;
+    }
+
+    nav ul li a {
+        color: crimson;
+    }
+
+    li a.active, li a:hover {
+        background-color: crimson;
+        color: #fff;
+        transition: 1s;
+    }
+
+    .checkbtn {
+        display: none;
+    }
+
+    header {
+        width: 100%;
+    }
+
+    .carroussel {
+        background-image: url("../imgs/fondodesktop.jpg");
+        background-repeat: no-repeat;
+        background-position:center;
+        background-size:contain;
+    }
+
+    .foto1-1, .foto1-2 {
+        display: none;
+        
+    }
+
+    .filtros select {
+        width: 25%;
+        margin: auto;
+        display: flex;
+
+    }
+
+    main {
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-left: 250px;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .card img {
+        width: 45%;
+
+    }
+
+    .precio {
+        justify-content: flex-start;
+    }
+
 }
 
