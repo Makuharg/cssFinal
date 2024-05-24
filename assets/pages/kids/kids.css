@@ -11,9 +11,6 @@ body {
     display: grid;
     grid-template-areas:
         "nav"
-        "header"
-        "sectionA"
-        "sectionB"
         "main"
         "footer"
     ;
@@ -79,8 +76,7 @@ li a.active, li a:hover {
     line-height: 100px;
     margin-right: 60px;
     cursor: pointer;
-    display: block;
-    
+    display: block;  
 }
 
 #check {
@@ -91,94 +87,13 @@ li a.active, li a:hover {
     left: 0;
 }
 
-/*css del header */
-
-header {
-    grid-area: header;
-    background-color: crimson;
-    line-height: 2vh;
-    text-align: start;
-    width: 100%;
-    overflow: hidden;
-    height: 2vh;
-}
-
-header p {
-    font-size: 0.7rem;
-    font-weight: 700;
-    color: white;
-    animation: move 14s infinite linear;
-    animation-direction: alternate;
-}
-
-@keyframes move {
-    from {
-        margin-left: 100%;
-        width: 300%;
-      }
-    
-      to {
-        margin-left: 0%;
-        width: 100%;
-    }
-}
-
-header p:hover {
-    animation-play-state: paused;
-}
-
-
-.carroussel {
-    grid-area: sectionA;
-    height: auto;
-    /* creando el carroussel */
-
-}
-
-
-.carroussel img {
-    width: 100vw;  
-}
-
-/* css de titulo y filtros */
-
-.filtros {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 30vh;
-    grid-area: sectionB;
-    width: 100vw;
-}
-
-.filtros h2 {
-    margin-top: 15px;
-    text-align: center;
-    color: crimson;
-}
-
-.filtros div {  
-    display: flex;
-    margin-top: 20px;
-    height: 5vh;
-    justify-content: center;
-}
-
-.filtros select {
-    width: 45vw;
-    padding: 13px;
-    text-align: center;
-    border-radius: 5px;
-    border: 1px solid grey;
-}
-
 /* css del main */
 
 main {
     grid-area: main;
     margin: 20px 0;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     justify-items: center;
     width: 100%;
 }
@@ -239,14 +154,22 @@ main {
     transform: scale(1.2);
 }
 
-/* css del footer */
+
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.card img {
+    margin-left: 40px;
+}
 
 footer {
     grid-area: footer;
     height: 4vh;
     padding: 20px;
     text-align: center;
-    padding: 20px;
     font-size: 1.1rem;
     border-top: 1px solid rgb(237, 71, 105);
 }
@@ -272,9 +195,7 @@ footer {
 @media (width >= 576px) {
     body {
         grid-template-areas: 
-            "nav header"
-            "nav sectionA"
-            "nav sectionB"
+            "nav main"
             "nav main"
             "footer footer"
         ;
@@ -282,6 +203,7 @@ footer {
 
     nav {
         width: 15vw;
+
     }
 
     .logo {
@@ -314,41 +236,13 @@ footer {
     }
 
     header {
-        width: 85vw;
+        width: 100%;
         border: 1px solid crimson;
-    }
-
-    .carroussel {
-        position: relative;
-        top: -80px;
-        left: -105px;
-        height: 65vh;
-        width: 85vw;
-        background-image: url("../imgs/fondodesktop.jpg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-    }
-
-    .carroussel img {
-        display: none;
-    }
-
-    .filtros {
-        height: 10vh;
-        width: 85vw;
-    }
-
-    .filtros select {
-        width: 25%;
-        margin: auto;
-        display: flex;
     }
 
     main {
         grid-template-columns: 1fr 1fr 1fr;
         justify-items: flex-start;
-        width: 85vw;
     }
 
     .card {
@@ -359,15 +253,12 @@ footer {
 
     .card img {
         width: 45%;
+        margin: 0;
     }
 
     .precio {
         justify-content: flex-start;
     }
 
-    footer {
-        width: 100vw;
-    }
-
+    
 }
-
