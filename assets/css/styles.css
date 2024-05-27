@@ -18,6 +18,7 @@ body {
         "footer"
     ;
     grid-template-columns: 1fr;
+    overflow-x: hidden;
 }
 
 /* css del navbar responsivo */
@@ -134,7 +135,6 @@ header p:hover {
     /* creando el carroussel */
 
 }
-
 
 .carroussel img {
     width: 100vw;  
